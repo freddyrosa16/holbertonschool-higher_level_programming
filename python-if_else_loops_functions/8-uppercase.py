@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def uppercase(str):
     for upper in range(len(str)):
         case = ord(str[upper])
