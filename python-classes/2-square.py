@@ -3,6 +3,8 @@
 
 
 class Square():
+    '''Square with size and error checks'''
+
     def __init__(self, size=0):
         self.__size = size
         if type(size) is not int:
