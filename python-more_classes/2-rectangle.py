@@ -30,3 +30,12 @@ class Rectangle:
     @width.setter
     def width(self, value):
         self.__width = value
+
+    def area(self):
+        return self.height * self.width
+
+    def perimeter(self):
+        if self.width == 0 or self.height == 0:
+            return 0
+        else:
+            return (self.height * 2) + (self.width * 2)
