@@ -70,4 +70,4 @@ class Rectangle:
 
     def __repr__(self):
         """ String representation of the rectangle """
-        return f"({self.width}, {self.height})"
+        return f"Rectangle({self.width}, {self.height})"
