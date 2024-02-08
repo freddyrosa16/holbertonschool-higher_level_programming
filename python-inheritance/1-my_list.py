@@ -20,5 +20,5 @@ class MyList(list):
         list_sorted = []
         for num in self:
             list_sorted.append(num)
-            list_sorted.sort
-            print(list_sorted)
+        list_sorted.sort
+        print(list_sorted)
