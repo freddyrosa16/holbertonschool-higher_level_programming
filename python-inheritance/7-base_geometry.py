@@ -23,6 +23,5 @@ class BaseGeometry:
             raise TypeError("<name> must be an integer")
         elif value < 0:
             raise ValueError("<name> must be greater than 0")
-        else:
-            self.name = name
-            self.value = value
+        self.name = name
+        self.value = value
