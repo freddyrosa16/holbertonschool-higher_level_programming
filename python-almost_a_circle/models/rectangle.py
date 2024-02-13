@@ -17,7 +17,6 @@ class Rectangle(Base):
         """
         super().__init__(id)
 
-        self.__width = width
         if type(width) is not int:
             raise TypeError("width must be an integer")
         elif width <= 0:
@@ -25,7 +24,6 @@ class Rectangle(Base):
         else:
             self.width = width
 
-        self.__height = height
         if type(height) is not int:
             raise TypeError("height must be an integer")
         elif height <= 0:
@@ -33,7 +31,6 @@ class Rectangle(Base):
         else:
             self.height = height
 
-        self.__x = x
         if type(x) is not int:
             raise TypeError("x must be an integer")
         elif x < 0:
@@ -41,7 +38,6 @@ class Rectangle(Base):
         else:
             self.x = x
 
-        self.__y = y
         if type(y) is not int:
             raise TypeError("y must be an integer")
         elif y < 0:
