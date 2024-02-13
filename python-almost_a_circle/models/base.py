@@ -1,15 +1,14 @@
 #!/usr/bin/python3
 """
 This module contains the class Base.
-The goal of it is to manage id attribute
-in all your future classes and to avoid
-duplicating the same code
 """
 
 
 class Base:
-    """ This class will be the base of all other
-    classes in this projects. """
+    """
+    This class will be the base of all other
+    classes in this projects.
+    """
 
     __nb_objects = 0
 
