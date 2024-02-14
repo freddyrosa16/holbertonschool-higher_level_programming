@@ -85,7 +85,12 @@ class Rectangle(Base):
 
     def display(self):
         """ Prints in the stdout Rectangle with # """
+        i = 0
+        while i < self.__y:
+            print("")
+            i += 1
         for i in range(self.__height):
+            print(" " * self.__x, end="")
             print('#' * self.__width)
 
     def __str__(self):
