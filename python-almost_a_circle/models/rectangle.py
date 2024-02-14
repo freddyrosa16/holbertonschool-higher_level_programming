@@ -100,7 +100,8 @@ class Rectangle(Base):
         return (f'[Rectangle] ({self.id}) {self.__x}/{self.__y} - '
                 f'{self.__width}/{self.__height}')
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
+        """ Assigns an arguments to each attribute """
         if args is not None:
             count = 0
             for arg in args:
