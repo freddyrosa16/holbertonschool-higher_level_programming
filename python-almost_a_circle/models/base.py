@@ -53,6 +53,7 @@ class Base:
                     list_instance.append(i.to_dictionary())
                 fd.write(cls.to_json_string(list_instance))
 
+    @staticmethod
     def from_json_string(json_string):
         """
         Return a list of JSON string representation.
@@ -62,3 +63,15 @@ class Base:
         else:
             li = json.loads(json_string)
             return li
+
+    @classmethod
+    def create(cls, **dictionary):
+        """
+        Return an instance with all attributes.
+        """
+        if cls.__name__ == 'Square':
+            dummy = cls(5)
+        elif cls.__name__ == 'Rectangle':
+            dummy = cls(5, 5)
+        cls.update(dummy, **dictionary)
+        return dummy
