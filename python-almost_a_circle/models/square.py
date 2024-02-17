@@ -68,7 +68,7 @@ class Square(Rectangle):
 
     def to_dictionary(self):
         """
-        Dictionaty representation of the class
+        Dictionary representation of the class
         """
         dic_sqr = {
             'id': self.id,
