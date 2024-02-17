@@ -1,7 +1,10 @@
 #!/usr/bin/python3
 """
-This module contains the class Rectangle
+This module have a class that defines
+a rectangle, and it inherit from Base
 """
+
+
 from models.base import Base
 
 
@@ -13,84 +16,111 @@ class Rectangle(Base):
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """
-        When initialize it will assign the values to it.
+        When initialize she assign the values to it
+        representations
         """
         super().__init__(id)
-        self.width = width
-        self.height = height
-        self.x = x
-        self.y = y
-
-    @property
-    def width(self):
-        """ Return the width of the Rectangle """
-        return self.__width
-
-    @width.setter
-    def width(self, width):
-        """ Sets the width of the Rectangle """
         if type(width) is not int:
-            raise TypeError("width must be an integer")
+            raise TypeError('width must be an integer')
         elif width <= 0:
-            raise ValueError("width must be > 0")
+            raise ValueError('width must be > 0')
         else:
             self.__width = width
+        if type(height) is not int:
+            raise TypeError('height must be an integer')
+        elif height <= 0:
+            raise ValueError('height must be > 0')
+        else:
+            self.__height = height
+        if type(x) is not int:
+            raise TypeError('x must be an integer')
+        elif x < 0:
+            raise ValueError('x must be >= 0')
+        else:
+            self.__x = x
+        if type(y) is not int:
+            raise TypeError('y must be an integer')
+        elif y < 0:
+            raise ValueError('y must be >= 0')
+        else:
+            self.__y = y
 
     @property
     def height(self):
-        """ Return the height of the Rectangle """
+        """ Return the height of the rectangle """
         return self.__height
 
     @height.setter
     def height(self, height):
-        """ Sets the height of the Rectangle """
+        """ Sets the height of the rectangle """
         if type(height) is not int:
-            raise TypeError("height must be an integer")
+            raise TypeError('height must be an integer')
         elif height <= 0:
-            raise ValueError("height must be > 0")
+            raise ValueError('height must be > 0')
         else:
             self.__height = height
 
     @property
+    def width(self):
+        """ Return the width of the rectangle """
+        return self.__width
+
+    @width.setter
+    def width(self, width):
+        """ Sets the width of the rectangle """
+        if type(width) is not int:
+            raise TypeError('width must be an integer')
+        elif width <= 0:
+            raise ValueError('width must be > 0')
+        else:
+            self.__width = width
+
+    @property
     def x(self):
-        """ Returns the x of the Rectangle """
+        """ Return the x of the rectangle """
         return self.__x
 
     @x.setter
     def x(self, x):
+
         if type(x) is not int:
-            raise TypeError("x must be an integer")
+            raise TypeError('x must be an integer')
         elif x < 0:
-            raise ValueError("x must be > 0")
+            raise ValueError('x must be >= 0')
         else:
             self.__x = x
 
     @property
     def y(self):
-        """ Returns the y of the Rectangle """
+        """ Return the y of the rectangle """
         return self.__y
 
     @y.setter
     def y(self, y):
+        """ Sets the y of the rectangle """
         if type(y) is not int:
-            raise TypeError("y must be an integer")
+            raise TypeError('y must be an integer')
         elif y < 0:
-            raise ValueError("y must be > 0")
+            raise ValueError('y must be >= 0')
         else:
             self.__y = y
 
     def area(self):
-        """ Returns area of Rectangle """
-        return self.__width * self.__height
+        """
+        Public Method that return the area value
+        of Rectangle instance
+        """
+        return self.__height * self.__width
 
     def display(self):
-        """ Prints in the stdout Rectangle with # """
-        i = 0
-        while i < self.__y:
-            print("")
-            i += 1
+        """
+        Public method that prints in stdout the
+        Rectangle instance with the character #
+        """
+        for i in range(self.__y):
+            print()
         for i in range(self.__height):
-            print(" " * self.__x, end="")
+            print(' ' * self.__x, end="")
             print('#' * self.__width)
 
     def __str__(self):
@@ -122,21 +152,23 @@ class Rectangle(Base):
                 self.id = elem
             if key == "width":
                 self.__width = elem
-            if key == "height":
-                self.__height = elem
             if key == "x":
                 self.__x = elem
             if key == "y":
                 self.__y = elem
+            if key == "height":
+                self.__height = elem
 
     def to_dictionary(self):
         """
-        Dictionary representation of the Rectangle """
-        rectangle_dic = {
+        Return a dictionary representation
+        of the class Rectangle
+        """
+        dic_rep = {
             'x': self.__x,
             'y': self.__y,
             'id': self.id,
             'height': self.__height,
             'width': self.__width
         }
-        return rectangle_dic
+        return dic_rep
