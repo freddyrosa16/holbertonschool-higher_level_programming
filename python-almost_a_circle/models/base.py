@@ -1,24 +1,24 @@
 #!/usr/bin/python3
 """
-This module contains the class Base.
+This module contains the clase Base.
+The goal of it is to manage id attribute
+in all your future classes and to avoid
+duplicating the same code
 """
 
 
-import json
 from os import path
+import json
 
 
 class Base:
-    """
-    This class will be the base of all other
-    classes in this projects.
-    """
-
+    """ This class will be the base of all other
+    classes in this projects. """
     __nb_objects = 0
 
     def __init__(self, id=None):
         """
-        This function initialize the
+        This funciton initializa the
         class by receiving the id argument
         """
         if id is not None:
@@ -31,9 +31,9 @@ class Base:
     def to_json_string(list_dictionaries):
         """
         This function returns a JSON string representation of
-        the dictionary.
+        the dictionary passed to us
         """
-        if list_dictionaries == None:
+        if list_dictionaries is None:
             return "[]"
         else:
             return json.dumps(list_dictionaries)
@@ -57,9 +57,9 @@ class Base:
     @staticmethod
     def from_json_string(json_string):
         """
-        Return a list of JSON string representation.
+        Return a list of JSON string representation of json_string
         """
-        if json_string == None:
+        if json_string is None:
             return []
         else:
             li = json.loads(json_string)
@@ -68,7 +68,7 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """
-        Return an instance with all attributes.
+        Return an instance witl all attribute aleady set
         """
         if cls.__name__ == 'Square':
             dummy = cls(5)
