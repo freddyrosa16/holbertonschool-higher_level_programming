@@ -1,14 +1,17 @@
 #!/usr/bin/python3
 """
-This module contains the class Square
+This module have a class that defines
+a Square, and it inherits from Rectangle
 """
+
+
 from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
     """
-    Class Square that inherit from Rectangle
-    it receive width, height, x, y and id from Base
+    Class Square that inherits from Rectangle
+    it receive size, x, y and id
     """
 
     def __init__(self, size, x=0, y=0, id=None):
@@ -20,24 +23,25 @@ class Square(Rectangle):
 
     def __str__(self):
         """ Returns [Square] (id) x/y - size """
-        return (f'[Square] ({self.id}) {self.x}/{self.y} - {self.size}')
+        return (f'[Square] ({self.id}) {self.x}/{self.y} - {self.width}')
 
     @property
     def size(self):
         """
-        Return the size of the square using
+        Return the size of the sqr using
         the width of the upper class
         """
         return super().width
 
     @size.setter
     def size(self, size):
-        """ Sets the square size """
+        """ Sets the sqr size """
         self.width = size
 
     def update(self, *args, **kwargs):
         """
-        Assigns argument to each attribute
+        Assigns the attribute, if args is empty
+        then it used the kwards to assign
         """
         if args is not None:
             count = 0
@@ -63,11 +67,13 @@ class Square(Rectangle):
                 self.y = elem
 
     def to_dictionary(self):
-        """ Dictionary representation of the Square """
-        square_dic = {
+        """
+        Dictionaty representation of the class
+        """
+        dic_sqr = {
             'id': self.id,
             'size': self.width,
             'x': self.x,
             'y': self.y
         }
-        return square_dic
+        return dic_sqr
