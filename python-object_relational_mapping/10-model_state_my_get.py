@@ -1,8 +1,7 @@
-
 #!/usr/bin/python3
-"""Print the State object with the name passed"""
-
-
+"""
+Print the State object with the name passed
+"""
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker

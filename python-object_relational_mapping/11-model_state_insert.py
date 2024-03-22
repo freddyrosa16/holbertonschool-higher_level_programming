@@ -1,8 +1,7 @@
-
 #!/usr/bin/python3
-"""Lists first states object from the database"""
-
-
+"""
+Lists first states object from the database
+"""
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
